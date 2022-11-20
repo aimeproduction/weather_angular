@@ -1,26 +1,23 @@
-import { Injectable } from '@angular/core';
+import {Injectable} from '@angular/core';
 import {HttpClient} from "@angular/common/http";
 import {Observable, tap} from "rxjs";
 import {CurrentWeather} from "../models/current-weather";
+import {zipcode} from "../models/zipcode";
 
-export interface zipcode{
-  code: number;
-}
 
 @Injectable({
   providedIn: 'root'
 })
 export class WeatherServiceService {
-Baseurl = 'https://api.openweathermap.org/data/2.5/weather?zip='
+  Baseurl = 'https://api.openweathermap.org/data/2.5/weather?zip='
   api_key: string = '5a4b2d457ecbef9eb2a71e480b947604';
-  data_api: CurrentWeather[]=[];
-  constructor(private  http: HttpClient) { }
+  data_api: CurrentWeather[] = [];
 
-  get_current_weather(zipcode: number): Observable<CurrentWeather>{
-    const currentcode = JSON.parse(<string>localStorage.getItem("currentWeatherCode")) ?? [];
-    currentcode.push(zipcode);
-    localStorage.setItem("currentWeatherCode", JSON.stringify(currentcode));
-    return this.http.get<CurrentWeather>(this.Baseurl+zipcode+',us&appid='+ this.api_key).pipe(
+  constructor(private http: HttpClient) {
+  }
+
+  get_current_weather(zipcode: number): Observable<CurrentWeather> {
+    return this.http.get<CurrentWeather>(this.Baseurl + zipcode + ',us&appid=' + this.api_key).pipe(
       tap((res: any) => {
         const current = JSON.parse(<string>localStorage.getItem("currentWeather")) ?? [];
         current.push(res);
