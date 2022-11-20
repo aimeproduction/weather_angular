@@ -23,6 +23,7 @@
       <p> Temperature: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{data.main.temp}}</p>
       <p> Max today: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{data.main.temp_max}}</p>
       <p> Min today: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{data.main.temp_min}}</p>
+
   </div>
     <div class="child2">
       <span style="font-size: 100px; color: red; " *ngIf="data.weather[0].main === clear_temp || data.weather[0].main === cloud_temp "><img src="assets/clouds.png" alt="clouds"> </span>
@@ -30,7 +31,7 @@
       <span style="font-size: 100px; color: red; " *ngIf="data.weather[0].main === rain_temp "><img src="assets/rain.png" alt="rain"> </span>
       <span style="font-size: 100px; color: red; " *ngIf="data.weather[0].main === snow_temp "><img src="assets/snow.png" alt="snow"> </span>
     </div>
-
+    <button class="btn7" mat-raised-button color="primary" routerLink="/forecast/{{stockzipcode[i]}}">Go to 5 days forecast</button>
   </div>
 
 </body>

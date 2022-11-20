@@ -4,6 +4,10 @@ import {FormBuilder, FormControl, FormGroup, Validators} from "@angular/forms";
 import {WeatherServiceService} from "../../service/weather-service.service";
 import {CurrentWeather} from "../../models/current-weather";
 
+export interface zipcode{
+  code: number;
+}
+
 @Component({
   selector: 'app-zipcode-display',
   templateUrl: './zipcode-display.component.html',
@@ -19,10 +23,12 @@ export class ZipcodeDisplayComponent {
   sunny_temp='Sunny';
   rain_temp='Rain';
   snow_temp='Snow'
+  stockzipcode!: zipcode[];
   constructor(private fb: FormBuilder, private service: WeatherServiceService) { }
 
   ngOnInit(): void {
     this.stockData = JSON.parse(<string>localStorage.getItem('currentWeather'));
+    this.stockzipcode = JSON.parse(<string>localStorage.getItem('currentWeatherCode'));
     this.form = new FormGroup({
       zipCode: new FormControl('', [Validators.required])
     })
@@ -38,11 +44,11 @@ export class ZipcodeDisplayComponent {
         this.errorMessage = "Sorry, it was impossible to load the data for the zipcode: "+this.zipcode;
       }
     });
-
+    this.stockzipcode = JSON.parse(<string>localStorage.getItem('currentWeather'));
   }
 
   toggleElement(index: number){
-      this.stockData = this.service.deleteStockDetail(index);
-
+      this.stockData = this.service.deleteweatherData(index);
+      this.stockzipcode = this.service.deletezipcode(index);
   }
 }
