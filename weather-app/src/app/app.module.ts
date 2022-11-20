@@ -5,15 +5,15 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ZipcodeDisplayComponent } from './components/zipcode-display/zipcode-display.component';
-import { FiveDayForecastComponent } from './components/five-day-forecast/five-day-forecast.component';
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import { HttpClientModule} from "@angular/common/http";
+import { ForecastComponent } from './components/forecast/forecast.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ZipcodeDisplayComponent,
-    FiveDayForecastComponent
+    ForecastComponent
   ],
   imports: [
     BrowserModule,
