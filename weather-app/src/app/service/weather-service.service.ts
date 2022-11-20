@@ -15,9 +15,18 @@ Baseurl = 'https://api.openweathermap.org/data/2.5/weather?zip='
   get_current_weather(zipcode: number): Observable<CurrentWeather>{
     return this.http.get<CurrentWeather>(this.Baseurl+zipcode+',us&appid='+ this.api_key).pipe(
       tap((res: any) => {
-        this.data_api =res;
-       console.log(this.data_api)
-        }))
-
+        const current = JSON.parse(<string>localStorage.getItem("currentWeather")) ?? [];
+        current.push(res);
+        localStorage.setItem("currentWeather", JSON.stringify(current));
+        console.log(current)
+      }))
   }
+
+  deleteStockDetail(index: number): CurrentWeather [] {
+    const currentDataWeather = JSON.parse(<string>localStorage.getItem("currentWeather")) as CurrentWeather [];
+    currentDataWeather.splice(index, 1);
+    localStorage.setItem("currentWeather", JSON.stringify(currentDataWeather));
+    return currentDataWeather;
+  }
+
 }

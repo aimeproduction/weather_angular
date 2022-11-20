@@ -14,25 +14,31 @@
   line-height: 0;
 }
 
-.zip-enter span {
+.zip-enterspan {
   background-color: #ffffff;
   padding: 0 10px;
   margin: 0 20px;
-}
-
-
-
-.zip-code{
-  margin-top: 1em;
-  margin-left: 14em;
 }
 .data{
   margin-left: 7em;
   width: 50%;
   height: 200px;
   border:1px solid black;
-  margin-bottom: 15px;
+  margin-bottom: 25px;
+  line-height: 0;
 }
+.dataspan {
+  background-color: #ffffff;
+  padding: 0 10px;
+  margin: 0 20px;
+}
+
+
+.zip-code{
+  margin-top: 1em;
+  margin-left: 14em;
+}
+
 .title{
   margin-left: 9.5em;
   margin-top: 2em;
@@ -60,4 +66,12 @@ h3{
   border: 0;
   margin-left: 95.5%;
   cursor: pointer;
+}
+p{
+  margin-left: 5em;
+  margin-top: 2em;
+}
+img{
+  height: 100px;
+  width: 100px;
 }
