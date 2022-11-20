@@ -6,6 +6,8 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ZipcodeDisplayComponent } from './components/zipcode-display/zipcode-display.component';
 import { FiveDayForecastComponent } from './components/five-day-forecast/five-day-forecast.component';
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
+import { HttpClientModule} from "@angular/common/http";
 
 @NgModule({
   declarations: [
@@ -16,8 +18,11 @@ import { FiveDayForecastComponent } from './components/five-day-forecast/five-da
   imports: [
     BrowserModule,
     AppRoutingModule,
-    BrowserAnimationsModule,
+    FormsModule,
+    ReactiveFormsModule,
     MatButtonModule,
+    BrowserAnimationsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

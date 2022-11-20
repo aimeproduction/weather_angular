@@ -1,0 +1,63 @@
+#trackBtn{
+  margin-left: 1em;
+}
+.btn-details{
+  margin-left: 5.5em;
+}
+.zip-enter{
+  margin-top: 2em;
+  margin-left: 7em;
+  width: 50%;
+  height: 120px;
+  border:1px solid black;
+  text-align: left;
+  line-height: 0;
+}
+
+.zip-enter span {
+  background-color: #ffffff;
+  padding: 0 10px;
+  margin: 0 20px;
+}
+
+
+
+.zip-code{
+  margin-top: 1em;
+  margin-left: 14em;
+}
+.data{
+  margin-left: 7em;
+  width: 50%;
+  height: 200px;
+  border:1px solid black;
+  margin-bottom: 15px;
+}
+.title{
+  margin-left: 9.5em;
+  margin-top: 2em;
+  font-size: 20px;
+}
+#stockInput{
+  margin-left: 6em;
+}
+.child1, .child2 {
+  display: inline-block;
+}
+.child2{
+  margin-left: 6em;
+}
+
+h3{
+  margin-left: 4.3em;
+}
+.errmessage{
+  margin-left: 7em;
+  font-size: 25px;
+  color: red;
+}
+.btn-delete{
+  border: 0;
+  margin-left: 95.5%;
+  cursor: pointer;
+}

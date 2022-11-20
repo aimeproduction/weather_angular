@@ -1,1 +1,19 @@
-<p>zipcode-display works!</p>
+<html>
+<body>
+<div class="zip-enter">
+  <span>Add a location </span>
+  <form class="ui container form" [formGroup]="form" (ngSubmit)="get_data()">
+    <br>
+    <p class="title">Enter a zip code: (94040, 95742, 10001)</p>
+    <input class="zip-code" type="number" formControlName="zipCode" style="height: 30px;">
+    <button id="trackBtn" mat-raised-button color="primary" [disabled]="!form.valid">Add location</button>
+  </form>
+</div>
+<br><br>
+<div class="errmessage" *ngIf="errorMessage">
+  {{errorMessage}}
+</div>
+</body>
+</html>
+
+
