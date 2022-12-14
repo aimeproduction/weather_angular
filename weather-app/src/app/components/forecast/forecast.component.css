@@ -1,0 +1,42 @@
+
+.data{
+  margin-left: 7em;
+  width: 50%;
+  height: 200px;
+  border:1px solid black;
+  margin-bottom: 25px;
+  line-height: 0;
+}
+
+
+
+
+.btn7{
+  margin-left: 70%;
+}
+.child1, .child2 {
+  display: inline-block;
+}
+.child2{
+  margin-left: 6em;
+}
+
+h1{
+  margin-left: 4em;
+  margin-top: 3em;
+  color: green;
+}
+.errmessage{
+  margin-left: 7em;
+  font-size: 25px;
+  color: red;
+}
+
+p{
+  margin-left: 5em;
+  margin-top: 2em;
+}
+img{
+  height: 100px;
+  width: 100px;
+}

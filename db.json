@@ -1,0 +1,28 @@
+{
+  "posts": [
+    {
+      "matricule": "st11",
+      "student_firstname": "Mickayel Aime",
+      "student_lastname": "Nangue Nguepi",
+      "date": "2020-01-01",
+      "street": "Franz-Ludwigstr 9",
+      "postcode": 97072,
+      "city": "Würzburg",
+      "id": 2
+    },
+    {
+      "matricule": "st12",
+      "student_firstname": "Mike",
+      "student_lastname": "Nangue",
+      "date": "2021-10-02",
+      "street": "Leo-str 9",
+      "postcode": 97072,
+      "city": "Würzburg",
+      "id": 3
+    }
+  ],
+  "comments": [],
+  "profile": {
+    "name": "typicode"
+  }
+}

@@ -1,1 +1,40 @@
-<p>forecast works!</p>
+<html>
+<body>
+
+<h1> 7 days forecast</h1>
+<button class="btn7" mat-raised-button color="primary" routerLink="/zipcode-display">Back to the list
+</button>
+<div class="data" *ngFor="let data of dataForecast.list; let i = index">
+
+  <div class="child1">
+    <br>
+    <p>Day {{i+1}}</p>
+    <p> Conditions:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      {{data.weather[0].main}} </p>
+    <p> Temperature:
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{data.temp.day}}</p>
+    <p> Maximum: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{data.temp.max}}</p>
+    <p> Minimum: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{data.temp.min}}</p>
+
+  </div>
+  <div class="child2">
+    <span style="font-size: 100px; color: red; "
+          *ngIf="data.weather[0].main === clear_temp || data.weather[0].main === cloud_temp "><img
+      src="assets/clouds.png" alt="clouds"> </span>
+    <span style="font-size: 100px; color: red; " *ngIf="data.weather[0].main === sunny_temp "><img src="assets/sun.png"
+                                                                                                   alt="sun"> </span>
+    <span style="font-size: 100px; color: red; " *ngIf="data.weather[0].main === rain_temp "><img src="assets/rain.png"
+                                                                                                  alt="rain"> </span>
+    <span style="font-size: 100px; color: red; " *ngIf="data.weather[0].main === snow_temp "><img src="assets/snow.png"
+                                                                                                  alt="snow"> </span>
+  </div>
+
+</div>
+<button class="btn7" mat-raised-button color="primary" routerLink="/zipcode-display">Back to the list
+</button>
+
+</body>
+</html>
+
+

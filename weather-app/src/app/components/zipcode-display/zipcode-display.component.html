@@ -19,7 +19,7 @@
   <button class="btn-delete" (click)="toggleElement(i)">❌</button>
   <div class="child1">
     <br>
-    <p> Current conditions:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{data.weather[0].main}} </p>
+    <p> Current conditions:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{data.weather[0].main}} </p>
     <p> Temperature:
       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{data.main.temp}}</p>
     <p> Max today: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{data.main.temp_max}}</p>
@@ -37,9 +37,11 @@
     <span style="font-size: 100px; color: red; " *ngIf="data.weather[0].main === snow_temp "><img src="assets/snow.png"
                                                                                                   alt="snow"> </span>
   </div>
-  <button class="btn7" mat-raised-button color="primary" routerLink="/forecast/{{stockzipcode[i]}}">Go to 5 days
+  <div *ngIf="stockzipcode">
+  <button class="btn7" mat-raised-button color="primary" routerLink="/forecast/{{stockzipcode[i]}}" (click)="positionElement(i)">Go to 7 days
     forecast
   </button>
+  </div>
 </div>
 
 </body>
